@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello go in VSCode")
+	fmt.Println("edit in master branch")
 }
