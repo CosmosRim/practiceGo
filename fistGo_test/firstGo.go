@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello go in git bash")
+	fmt.Println("first edit in git branch edit")
 }
