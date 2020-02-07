@@ -22,6 +22,7 @@ func main() {
 	var currentTemp Celsius = 19
 	fmt.Printf("current temperature is %g Celsius, %g Fahrenheit.\n", currentTemp, CToF(currentTemp))
 	fmt.Printf("different type %g.\n", CToF(BoilingC)-CToF(FreezingC))
+	fmt.Println("testMerge")
 }
 
 func CToF(c Celsius) Fahrenheit { return Fahrenheit(c*9/5 + 32) }
