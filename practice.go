@@ -33,7 +33,9 @@ import (
 	"fmt"
 
 	"./internal/tempconv"
-) 
+)
 
-fmt.Println("zZZ %v\n", tempconv.AbsoluteZeroC)
-fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
+func main() {
+	fmt.Println("zZZ %v\n", tempconv.AbsoluteZeroC)
+	fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
+}
