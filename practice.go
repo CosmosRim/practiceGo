@@ -36,6 +36,6 @@ import (
 )
 
 func main() {
-	fmt.Println("zZZ %v\n", tempconv.AbsoluteZeroC)
+	fmt.Printf("zZZ %v\n", tempconv.AbsoluteZeroC)
 	fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
 }
