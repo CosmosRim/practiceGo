@@ -32,7 +32,7 @@ package main
 import (
 	"fmt"
 
-	"./internal/tempconv"
+	"convTemp/internal/tempconv"
 )
 
 func main() {
