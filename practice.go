@@ -38,4 +38,5 @@ import (
 func main() {
 	fmt.Printf("zZZ %v\n", tempconv.AbsoluteZeroC)
 	fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
+	fmt.Printf("absoult zero in kelvin is %v\n", tempconv.CToK(tempconv.AbsoluteZeroC))
 }
