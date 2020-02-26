@@ -29,14 +29,38 @@ package main
 //func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
 
 //practice 2.6 1
+//import (
+//	"fmt"
+//
+//	"convTemp/internal/tempconv"
+//)
+//
+//func main() {
+//	fmt.Printf("zZZ %v\n", tempconv.AbsoluteZeroC)
+//	fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
+//	fmt.Printf("absoult zero in kelvin is %v\n", tempconv.CToK(tempconv.AbsoluteZeroC))
+//}
+
+//practice 2.6.1 1
 import (
 	"fmt"
+	"os"
+	"strconv"
 
 	"convTemp/internal/tempconv"
 )
 
 func main() {
-	fmt.Printf("zZZ %v\n", tempconv.AbsoluteZeroC)
-	fmt.Println(tempconv.CToF(tempconv.AbsoluteZeroC))
-	fmt.Printf("absoult zero in kelvin is %v\n", tempconv.CToK(tempconv.AbsoluteZeroC))
+	for _, arg := range os.Args[1:] {
+		t, err := strconv.ParseFloat(arg, 64)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "cf: %v\n", err)
+			os.Exit(1)
+		}
+		f := tempconv.Fahrenheit(t)
+		c := tempconv.Celsius(t)
+		k := tempconv.Kelvin(t)
+		fmt.Printf("%s = %s, %s = %s\n", f, tempconv.FToC(f), c, tempconv.CToF(c))
+		fmt.Printf("%s = %s, %s = %s\n", k, tempconv.KToC(k), c, tempconv.CToK(c))
+	}
 }
