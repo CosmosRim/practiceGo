@@ -47,12 +47,14 @@ import (
 	"os"
 	"strconv"
 
+	"convTemp/internal/popcount"
 	"convTemp/internal/tempconv"
 )
 
 func main() {
 	for _, arg := range os.Args[1:] {
 		t, err := strconv.ParseFloat(arg, 64)
+		t1 := uint64(t)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "cf: %v\n", err)
 			os.Exit(1)
@@ -62,5 +64,6 @@ func main() {
 		k := tempconv.Kelvin(t)
 		fmt.Printf("%s = %s, %s = %s\n", f, tempconv.FToC(f), c, tempconv.CToF(c))
 		fmt.Printf("%s = %s, %s = %s\n", k, tempconv.KToC(k), c, tempconv.CToK(c))
+		fmt.Println(popcount.PopCount(t1))
 	}
 }
